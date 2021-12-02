@@ -15,7 +15,7 @@ val mutators = mutableMapOf<String, (Int) -> Unit>(
 fun main(args: Array<String>) 
 {
   val scanner = Scanner(
-	File("input.txt")
+	File("inputs", "two.txt")
   )
 
   while (scanner.hasNextLine())
