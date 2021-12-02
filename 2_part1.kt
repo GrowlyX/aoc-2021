@@ -12,14 +12,14 @@ val mutators = mutableMapOf<String, (Int) -> Unit>(
 fun main(args: Array<String>) 
 {
   val scanner = Scanner(
-	  File("input.txt")
+	File("input.txt")
   )
 
   while (scanner.hasNextLine())
   {
-	  val split = scanner.nextLine().split(' ')
+	val split = scanner.nextLine().split(' ')
 	
-	  mutators[split[0]]?.invoke(split[1].toInt())
+	mutators[split[0]]?.invoke(split[1].toInt())
   }
 
   println("The answer is: ${numberPair.first * numberPair.second}")
