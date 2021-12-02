@@ -11,9 +11,7 @@ fun main()
 	val integerSums = mutableListOf<Int>()
 
 	var greaterThanPrevious = 0
-
-	var startIndex = 0
-	var endIndex = 2
+	val indexDelta = MutablePair(0, 2)
 
 	while (scanner.hasNextInt())
 	{
@@ -26,7 +24,7 @@ fun main()
 		}
 
 		val numberSubList = integers.subList(
-			startIndex, endIndex + 1
+			indexDelta.first, indexDelta.second + 1
 		)
 
 		val previousSum = if (integerSums.isEmpty())
@@ -40,8 +38,13 @@ fun main()
 			greaterThanPrevious++
 		}
 
-		startIndex++; endIndex++
+		indexDelta.first++; indexDelta.second++
 	}
 
 	println("The answer is: $greaterThanPrevious")
 }
+
+class MutablePair<T>(
+	var first: T,
+	var second: T
+)
